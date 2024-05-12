@@ -27,3 +27,12 @@ Given("visit the main page", (url) => {
       When('I select product',(text)=>{
         mainPage.selectProduct(text);
       })
+      When('I click logoUrl',()=>{
+        mainPage.clickLogoUrl();
+      })
+      When('I click depredator',()=>{
+        mainPage.clickDepredator();
+      })
+      When('I select depredator',()=>{
+        mainPage.selectDepedator();
+      })

@@ -18,22 +18,22 @@ export class Mainpage{
       cy.get('button > .material-icons').should('be.visible');
 
     }
-
     selectProduct(){
       cy.contains('.product-miniature','Anzuelo Jig').click();
-
-     // cy.get('#group_17 > :nth-child(2) > .input-radio').should('be.visible')
-      //cy.get(':nth-child(4) > .input-radio')
-      //cy.get().should('contain','Anzuelo Jig').click()
+    }
+    clickLogoUrl(){
+      cy.get('.logo').should('be.visible').and('have.class','logo img-responsive').and('exist').click();
+    }
+    clickDepredator(){
+     cy.get('#lnk-depredadores').should('exist').contains('Depredadores').should('not.be.visible');
+     //cy.get('#lnk-depredadores').contains('Depredadores') 
+    }
+    selectDepedator(){
+     // cy.get('#exCollapsingNavbar120')
+      cy.get('href="https://miemipesca.com/120-black-bass"')
     }
 
-
-   /* checkUrlValue(urlValue){
-      //cy.url().should('include', urlValue)
-
-      cy.url().should('contains', 'https://miemipesca.com/buscar',urlValue);
-    }*/
-
+    
 
 
 }

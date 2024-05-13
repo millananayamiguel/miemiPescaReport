@@ -1,6 +1,6 @@
 /*pantillas funciones
 
-cy.get('body').should('contain', Text);  #### este elemento seleciona del body y contiene Textto ....####
+cy.get('body').should('contain', Text);  #### este elemento seleciona del body y contiene Texto ....####
 
 
 */

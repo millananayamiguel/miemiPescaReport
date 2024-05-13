@@ -6,8 +6,8 @@ import { Mainpage } from "../pages/mainPage";
 
 let mainPage= new Mainpage();
 
-Given("visit the main page", (url) => {
-    mainPage.navigate(url);
+Given("visit the main page", (baseUrl) => {
+    mainPage.navigate(baseUrl);
      });
      When("I check that the page contain the text {string} ",(text)=>{
         mainPage.bodyText(text);
@@ -35,4 +35,19 @@ Given("visit the main page", (url) => {
       })
       When('I select depredator',()=>{
         mainPage.selectDepedator();
+      })
+      When('I click suggestion',()=>{
+        mainPage.clickButtonSuggestion();
+      })
+      When('I select asunt',()=>{
+        mainPage.selectContact();
+      })
+      When('I add email',()=>{
+        mainPage.addEmail();
+      })
+      When('I add message',()=>{
+        mainPage.addMessage();
+      })
+      When('I check private',()=>{
+        mainPage.checkPrivate();
       })

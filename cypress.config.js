@@ -4,8 +4,11 @@ const createBundler =require('@bahmutov/cypress-esbuild-preprocessor');
 const { defineConfig } = require('cypress');
 module.exports = defineConfig({
 e2e: {
+baseUrl:"https://miemipesca.com/",
 "chromeWebSecurity": false,
 specPattern: '**/*.feature',
+defaultCommandTimeout:10000,
+numTestsKeptInMemory:2,
 async setupNodeEvents(on, config) {
 await addCucumberPreprocessorPlugin(on, config);
 on(

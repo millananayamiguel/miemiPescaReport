@@ -51,3 +51,9 @@ Given("visit the main page", (baseUrl) => {
       When('I check private',()=>{
         mainPage.checkPrivate();
       })
+      When ('I click submit',()=>{
+        mainPage.clickSubmit();
+      })
+      When ('I message error',()=>{
+        mainPage.messageError();
+      })

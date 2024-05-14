@@ -25,3 +25,5 @@ When I select asunt
 And I add email
 And I add message
 And I check private
+And I click submit
+Then I message error

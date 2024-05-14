@@ -7,7 +7,7 @@ e2e: {
 baseUrl:"https://miemipesca.com/",
 "chromeWebSecurity": false,
 specPattern: '**/*.feature',
-defaultCommandTimeout:10000,
+defaultCommandTimeout:20000,
 numTestsKeptInMemory:2,
 async setupNodeEvents(on, config) {
 await addCucumberPreprocessorPlugin(on, config);

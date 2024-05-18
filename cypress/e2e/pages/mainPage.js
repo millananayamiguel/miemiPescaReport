@@ -4,10 +4,14 @@ const searchProductButton ='button > .material-icons';
 const productSelect ='.product-miniature';
 const logoClick ='.logo';
 const depredatorClick ='#lnk-depredadores';
-//const DdepedatorSelect
+const depedatorSelect = '.clearfix'
 const clickSuggestion='.parallex_button > a';
 const contactSelect ='select';
 const emailAdd ='.form-group:nth-child(3) .form-control';
+const messageAdd = '.col-md-9 > .form-control';
+const privateCheck = '#psgdpr_consent_checkbox_105';
+const submitClick = '.form-footer > .btn';
+const errorMessage = 'form > .col-xs-12';
 
 
 export class Mainpage{
@@ -37,17 +41,14 @@ export class Mainpage{
       cy.get(logoClick).should('be.visible').and('have.class','logo img-responsive').and('exist').click();
     }
     clickDepredator(){
-      cy.get('depredatorClick').contains('Depredadores').should('exist').and('not.be.visible');
+      cy.get(depredatorClick).contains('Depredadores').should('exist').and('not.be.visible');
     }
     selectDepedator(){
-    // cy.get('ul.category-top-menu8').contains('Lucio').should('be.visible').and('have.text','Hilos')
-    //cy.get('.menuPrincipal').should('exist')
-     //cy.get('.category-sub-menu').children().should('contain','Lucio')
-     //cy.get('#subcategories > .clearfix > :nth-child(3)')
-    // cy.get('.category-top-menu').contains('Lucio');
-   //  cy.get('#subcategories').should('have.attr','https://miemipesca.com/148-lucio')
-     //cy.get('ul.category-sub-menu').children('#exCollapsingNavbar148')
-     
+   // cy.get(depedatorSelect).should('have.attr','href').and('include','miemipesca.com/8-depredadores')
+   cy.get(depedatorSelect).should('have.class','subcategory-image')
+     // cy.get(depedatorSelect).title('have.text','Lucio ')
+      //cy.get(depedatorSelect).children('.subcategory-image')
+
     }
     clickButtonSuggestion(){
       cy.get(clickSuggestion).click()
@@ -60,17 +61,17 @@ export class Mainpage{
 
     }
     addMessage(){
-      cy.get('.col-md-9 > .form-control').type('Hola buenas tardes').should('be.visible')
+      cy.get(messageAdd).type('Hola buenas tardes').should('be.visible')
     }
     checkPrivate(){
-      cy.get('#psgdpr_consent_checkbox_105').click();
+      cy.get(privateCheck).click();
 
     }
     clickSubmit(){
-      cy.get('.form-footer > .btn').click()
+      cy.get(submitClick).click()
     }
     messageError(){
-      cy.get('form > .col-xs-12').should('be.visible').and('contain','Please validate the captcha field before submitting your request')
+      cy.get(errorMessage).should('be.visible').and('contain','Please validate the captcha field before submitting your request')
     }
 
 

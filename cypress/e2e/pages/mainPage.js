@@ -20,29 +20,55 @@ export class Mainpage{
     bodyText(Text){
     cy.get('body').should('contain', Text);
   }
+    //Esta función debería llamaarse clickCookies o clickRejecyAll porque eso es lo que hace
     checkCookies(){
       cy.get(cookiesButton).should('be.visible').click(); 
     }
     validateTitle(){
       cy.title().should('contain','Miemi Pesca',Text);
     }
+
     searchProduct(){
       cy.get(productSearch).type('anzuelo{enter}').should('have.value','anzuelo');
-      
     }
-    clickSearchProduct(){
-      cy.get(searchProductButton).should('be.visible');
 
+    //Le he añadido .click() al final para que haga click como indica el nombre de la función
+    clickSearchProduct(){
+      cy.get(searchProductButton).should('be.visible').click();
     }
+    
     selectProduct(){
       cy.contains(productSelect,'Anzuelo Jig').click();
     }
-    clickLogoUrl(){
-      cy.get(logoClick).should('be.visible').and('have.class','logo img-responsive').and('exist').click();
+    //Podrías parametrizar esta función (selectProduct) para que puedas usarla para seleccionar otros productos en otros tests
+     selectAnyProduct(productName){
+      cy.contains(productSelect, productName).click();
     }
+
+    //No tiene sentido la aserción de exist después de comprobar que es visible
+    clickLogoUrl(){
+      cy.get(logoClick).should('be.visible').and('have.class','logo img-responsive').click();
+    }
+
+    //No sé para que sirve esta función, pero claramente no hace click en nada, por un lado comprueba que algo existe y luego que no es visible, en cambio se llama clickDepredator, no le veo mucho sentido al verdad
     clickDepredator(){
       cy.get(depredatorClick).contains('Depredadores').should('exist').and('not.be.visible');
     }
+
+    /*
+    La función selectDepedator, se supone que selecciona subcategorías de la seccion depredadores, sin embargo la constante depedatorSelect = '.clearfix' no nos lleva 
+    al elemento que queremos buscar si lo que quieres hacer es hacer click sobre algunos de los elementos que están dntro de subcategorías como por ejemplo "Lucio" lo puedes probar esta 
+    */
+
+    clickLucio() {
+        cy.contains('.subcategory-name', "Lucio").click();
+    }
+    //Usando esta función harás click sobre la subcateroría "Lucio" pero la puedes parametrizar para que puedas hacer click sobre cualquier subcategoría así
+    
+    clickSubcategoria(subcategorieName) {
+        cy.contains('.subcategory-name', subcategorieName).click();
+    }
+    
     selectDepedator(){
    // cy.get(depedatorSelect).should('have.attr','href').and('include','miemipesca.com/8-depredadores')
    cy.get(depedatorSelect).should('have.class','subcategory-image')

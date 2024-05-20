@@ -4,7 +4,7 @@ const searchProductButton ='button > .material-icons';
 const productSelect ='.product-miniature';
 const logoClick ='.logo';
 const depredatorClick ='#lnk-depredadores';
-const depedatorSelect = '.clearfix'
+const lucioClick = ".subcategory-name";
 const clickSuggestion='.parallex_button > a';
 const contactSelect ='select';
 const emailAdd ='.form-group:nth-child(3) .form-control';
@@ -20,7 +20,7 @@ export class Mainpage{
     bodyText(Text){
     cy.get('body').should('contain', Text);
   }
-    checkCookies(){
+    clickCookies(){
       cy.get(cookiesButton).should('be.visible').click(); 
     }
     validateTitle(){
@@ -31,25 +31,21 @@ export class Mainpage{
       
     }
     clickSearchProduct(){
-      cy.get(searchProductButton).should('be.visible');
+      cy.get(searchProductButton).should('be.visible').click();
 
     }
-    selectProduct(){
-      cy.contains(productSelect,'Anzuelo Jig').click();
+    selectAnyProduct(productName){
+      cy.contains(productSelect, productName).click();
     }
     clickLogoUrl(){
-      cy.get(logoClick).should('be.visible').and('have.class','logo img-responsive').and('exist').click();
+      cy.get(logoClick).should('be.visible').and('have.class','logo img-responsive').click();
     }
     clickDepredator(){
       cy.get(depredatorClick).contains('Depredadores').should('exist').and('not.be.visible');
     }
-    selectDepedator(){
-   // cy.get(depedatorSelect).should('have.attr','href').and('include','miemipesca.com/8-depredadores')
-   cy.get(depedatorSelect).should('have.class','subcategory-image')
-     // cy.get(depedatorSelect).title('have.text','Lucio ')
-      //cy.get(depedatorSelect).children('.subcategory-image')
-
-    }
+    clickLucio() {
+      cy.contains(lucioClick, "Lucio").click();
+  }
     clickButtonSuggestion(){
       cy.get(clickSuggestion).click()
     }

@@ -6,14 +6,14 @@ import { Mainpage } from "../pages/mainPage";
 
 let mainPage= new Mainpage();
 
-Given("visit the main page", (baseUrl) => {
+Given("I visit the main page", (baseUrl) => {
     mainPage.navigate(baseUrl);
      });
      When("I check that the page contain the text {string} ",(text)=>{
         mainPage.bodyText(text);
       })
       When("I click cookies",()=>{
-        mainPage.checkCookies();
+        mainPage.clickCookies();
       })
       When("I validate title",(text)=>{
         mainPage.validateTitle(text);
@@ -25,7 +25,7 @@ Given("visit the main page", (baseUrl) => {
         mainPage.clickSearchProduct();
       })
       When('I select product',(text)=>{
-        mainPage.selectProduct(text);
+        mainPage.selectAnyProduct(text);
       })
       When('I click logoUrl',()=>{
         mainPage.clickLogoUrl();
@@ -34,7 +34,7 @@ Given("visit the main page", (baseUrl) => {
         mainPage.clickDepredator();
       })
       When('I select depredator',()=>{
-        mainPage.selectDepedator();
+        mainPage.clickLucio();
       })
       When('I click suggestion',()=>{
         mainPage.clickButtonSuggestion();
@@ -54,6 +54,6 @@ Given("visit the main page", (baseUrl) => {
       When ('I click submit',()=>{
         mainPage.clickSubmit();
       })
-      When ('I message error',()=>{
+      When ('I check that the message error appears',()=>{
         mainPage.messageError();
       })

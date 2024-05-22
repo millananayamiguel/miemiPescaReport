@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:smoke": "cypress run --env tags=@smoke",
+    "cy:regression": "cypress run --env tags=@regression",
+    "cy:loginSteps": "cypress run --env tags=@loginSteps"
   },
   "keywords": [],
   "author": "Miguel MIllan",

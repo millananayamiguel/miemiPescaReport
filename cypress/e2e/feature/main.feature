@@ -1,4 +1,4 @@
-
+@regression @loginSteps
 Feature: visit the main page
 
 

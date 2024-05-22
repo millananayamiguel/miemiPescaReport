@@ -4,9 +4,9 @@ const createBundler =require('@bahmutov/cypress-esbuild-preprocessor');
 const { defineConfig } = require('cypress');
 module.exports = defineConfig({
 e2e: {
-baseUrl:"https://miemipesca.com/",
+//baseUrl:"https://miemipesca.com/",
 "chromeWebSecurity": false,
-specPattern: '**/*.feature',
+specPattern: ['**/*.feature', '**/apiTests/*/*.js'],
 defaultCommandTimeout:20000,
 numTestsKeptInMemory:2,
 async setupNodeEvents(on, config) {

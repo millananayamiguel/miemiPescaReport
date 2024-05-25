@@ -92,6 +92,8 @@ describe('Use GET method on Typicode',() =>{
           expect(userValueId).to.have.property('email', 'Lew@alysha.tv');
         });
       });
+
+      //funcion de Merchedes
       it.only('check in follow webpage the status and lenght for the endopoint "/posts"', () => {
         cy.request('https://jsonplaceholder.typicode.com/posts/1/comments').should((response) => {
             expect(response.status).to.eq(200);

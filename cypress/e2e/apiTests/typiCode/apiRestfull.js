@@ -8,17 +8,32 @@ describe('GET and check that the response values ​​are correct',()=>{
             expect(response.body.data).to.include.all.keys(['color','capacity']);      
           });
         });
+    it('check response  POST', () => {
+            const putData = {
+                name: "Iphone 20",
+                data: {
+                    "color": "Cloudy White",
+                    "capacity GB": 512
+                }
+            };
+            cy.request('POST', 'https://api.restful-api.dev/objects', putData)
+            .then((response) => {
+                const newRespon = response.body                
+                expect(response.status).to.eq(200);
+                expect(newRespon).to.deep.include(putData);
+            })
+        
         it('PUT modify all the values of the body', () => {
             const newData={
-                "id":8 ,
+                "id": 8 ,
                 "name": "Apple iPhone 18 Mini, 256GB, Black",
                 "data": null
               }
-            cy.request(`https://api.restful-api.dev/objects/2`)
+            //cy.request(`https://api.restful-api.dev/objects/2`)
             cy.request('PUT',`https://api.restful-api.dev/objects/2`,newData)
             .then((response)=>{
             expect(response.status).to.eq(200);
-            //expect(response.body).to.deep.include(newData);
+            expect(response.body).to.deep.include(newData);
 
             //expect(response.body).to.have.property('name', 'Apple iPhone 16 Mini, 256GB, Black');
             })    
@@ -40,6 +55,7 @@ describe('GET and check that the response values ​​are correct',()=>{
 
               });
            });
+        });
         
 
 

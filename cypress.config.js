@@ -8,7 +8,11 @@ e2e: {
 "chromeWebSecurity": false,
 specPattern: ['**/*.feature', '**/apiTests/*/*.js'],
 defaultCommandTimeout:20000,
-numTestsKeptInMemory:2,
+//numTestsKeptInMemory:10, // 50 ppor defecto guarda
+env: {
+    snapshotOnly: true,
+    requestMode: true
+  },
 async setupNodeEvents(on, config) {
 await addCucumberPreprocessorPlugin(on, config);
 on(

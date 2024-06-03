@@ -8,7 +8,7 @@ baseUrl:"https://miemipesca.com/",
 "chromeWebSecurity": false,
 specPattern: ['**/*.feature', '**/apiTests/*/*.js'],
 defaultCommandTimeout:20000,
-numTestsKeptInMemory:10, // 50 ppor defecto guarda
+//numTestsKeptInMemory:10, // 50 ppor defecto guarda
 env: {
     snapshotOnly: true,
     requestMode: true

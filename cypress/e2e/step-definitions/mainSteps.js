@@ -9,7 +9,7 @@ let mainPage= new Mainpage();
 Given("I visit the main page", (baseUrl) => {
     mainPage.navigate(baseUrl);
      });
-     When("I check that the page contain the text {string} ",(text)=>{
+     When("I check that the page contain the text miemipesca ",(text)=>{
         mainPage.bodyText(text);
       })
       When("I click cookies",()=>{

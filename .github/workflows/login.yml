@@ -1,4 +1,4 @@
-name: Cypress API Test
+name: Cypress Login Test
 on:
   workflow_dispatch:
 jobs:
@@ -13,7 +13,7 @@ jobs:
         node-version: '20.12.2'
     - name: Install dependencies
       run: npm install
-    - name: Run Cypress api test
-      run: npm run cy:apiTest
+    - name: Run Cypress login test
+      run: npm run cy:loginTest
       env:
-         CI: true  
+        CI: true

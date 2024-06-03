@@ -1,8 +1,6 @@
 name: Cypress Login Test
 on:
   workflow_dispatch:
-
-    
 jobs:
   cypress-login-test:
     runs-on: ubuntu-latest

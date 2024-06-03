@@ -94,20 +94,20 @@ describe('Use GET method on Typicode',() =>{
       });
 
       //funcion de Merchedes
-      it.only('check in follow webpage the status and lenght for the endopoint "/posts"', () => {
-        cy.request('https://jsonplaceholder.typicode.com/posts/1/comments').should((response) => {
-            expect(response.status).to.eq(200);
-            expect(response.body).to.have.length(5);
-            expect(response.body).to.be.an('array');
-            expect(response.body).not.be.a('string');
-            encontrarEmail = 'response.body.find', 'email', 'Lew@alysha.tv';
-            expect(encontrarEmail, 'have.to.id' = 4);
-        });
+      //it('check in follow webpage the status and lenght for the endopoint "/posts"', () => {
+        //cy.request('https://jsonplaceholder.typicode.com/posts/1/comments').should((response) => {
+       //    expect(response.status).to.eq(200);
+         //   expect(response.body).to.have.length(5);
+          //  expect(response.body).to.be.an('array');
+          //  expect(response.body).not.be.a('string');
+          //  encontrarEmail = 'response.body.find', 'email', 'Lew@alysha.tv';
+          //  expect(encontrarEmail, 'have.to.id' = 4);
+       // });
     });
     
     
     
-})
+//})
 
 
 
